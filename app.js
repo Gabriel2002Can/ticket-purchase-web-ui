@@ -6,7 +6,7 @@ document.getElementById("ticketForm").addEventListener("submit", async function 
     formData.forEach((value, key) => ticket[key] = key === "ConcertId" || key === "Quantity" ? parseInt(value) : value);
   
     try {
-      const response = await fetch("https://nscc-0490083-ticket-brejegejfzafa6fr.canadacentral-01.azurewebsites.net/api/TicketQueueFunction", {
+      const response = await fetch("https://nscc-0490083-ticket-brejegejfzafa6fr.canadacentral-01.azurewebsites.net/api/TicketPurchase", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(ticket)

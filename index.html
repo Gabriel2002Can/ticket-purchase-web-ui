@@ -3,58 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ticket Purchase</title>
+  <title>Concert Ticket Purchase</title>
   <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>Buy Your Concert Tickets</h1>
-    <form id="ticketForm">
-      <label for="concert">Select Concert:</label>
-      <select id="concert" name="ConcertId" required>
-        <option value="1">Coldplay - Toronto (ID: 1)</option>
-        <option value="2">Beyoncé - Vancouver (ID: 2)</option>
-        <option value="3">Taylor Swift - Montreal (ID: 3)</option>
-      </select>
+    <h1>🎟️ Concert Ticket Purchase</h1>
+    <p class="subtitle">Select your concert and fill in your details below</p>
 
-      <label>Name:</label>
-      <input type="text" name="Name" required />
+    <form id="ticketForm" class="form">
+      <div class="form-group">
+        <label for="concert">Concert:</label>
+        <select id="concert" name="ConcertId" required>
+          <option value="" disabled selected>Select a concert</option>
+          <option value="1">Coldplay – Toronto</option>
+          <option value="2">Beyoncé – Vancouver</option>
+          <option value="3">Taylor Swift – Montreal</option>
+        </select>
+      </div>
 
-      <label>Email:</label>
-      <input type="email" name="Email" required />
+      <div class="form-row">
+        <input type="text" name="Name" placeholder="Full Name" required />
+        <input type="email" name="Email" placeholder="Email Address" required />
+      </div>
 
-      <label>Phone:</label>
-      <input type="tel" name="Phone" required />
+      <div class="form-row">
+        <input type="tel" name="Phone" placeholder="Phone Number" required />
+        <input type="number" name="Quantity" placeholder="Tickets (1–10)" min="1" max="10" required />
+      </div>
 
-      <label>Quantity (1-10):</label>
-      <input type="number" name="Quantity" min="1" max="10" required />
+      <div class="form-row">
+        <input type="text" name="CreditCard" placeholder="Credit Card Number" required />
+        <input type="text" name="Expiration" placeholder="MM/DD/YYYY" required />
+        <input type="text" name="SecurityCode" placeholder="CVC" required />
+      </div>
 
-      <label>Credit Card:</label>
-      <input type="text" name="CreditCard" required />
+      <input type="text" name="Address" placeholder="Address" required />
+      <div class="form-row">
+        <input type="text" name="City" placeholder="City" required />
+        <input type="text" name="Province" placeholder="Province" required />
+      </div>
 
-      <label>Expiration (MM/DD/YYYY):</label>
-      <input type="text" name="Expiration" placeholder="MM/DD/YYYY" required />
+      <div class="form-row">
+        <input type="text" name="PostalCode" placeholder="Postal Code" required />
+        <input type="text" name="Country" placeholder="Country" required />
+      </div>
 
-      <label>Security Code (3-4 digits):</label>
-      <input type="text" name="SecurityCode" required />
-
-      <label>Address:</label>
-      <input type="text" name="Address" required />
-
-      <label>City:</label>
-      <input type="text" name="City" required />
-
-      <label>Province:</label>
-      <input type="text" name="Province" required />
-
-      <label>Postal Code:</label>
-      <input type="text" name="PostalCode" required />
-
-      <label>Country:</label>
-      <input type="text" name="Country" required />
-
-      <button type="submit">Purchase</button>
-      <p id="statusMessage"></p>
+      <button type="submit" class="btn">Purchase</button>
+      <p id="statusMessage" class="status-message"></p>
     </form>
   </div>
 

@@ -8,7 +8,7 @@ document.getElementById("ticketForm").addEventListener("submit", async function 
     try {
       const response = await fetch("https://nscc-0490083-ticket-brejegejfzafa6fr.canadacentral-01.azurewebsites.net/api/TicketPurchase", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
         body: JSON.stringify(ticket)
       });
   
